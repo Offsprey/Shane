@@ -22,7 +22,7 @@ public abstract class MovableObject extends GameObject{
     
     public abstract int getSpeed();
     
-    public static int fixDirection(double rawDirection)
+    public static int fixHeading(double rawDirection)
     {
         double newDirection = rawDirection;
         
@@ -31,6 +31,19 @@ public abstract class MovableObject extends GameObject{
         
         if (rawDirection >= 360)
             newDirection = rawDirection % 360;
+        
+        return (int)newDirection;
+    }
+    
+    public static int fixDirection(double rawDirection)
+    {
+        double newDirection = rawDirection;
+        
+        if (rawDirection < -45)
+            newDirection = -45;
+        
+        if (rawDirection >45)
+            newDirection = 45;
         
         return (int)newDirection;
     }

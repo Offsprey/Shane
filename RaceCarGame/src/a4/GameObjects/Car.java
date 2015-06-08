@@ -164,7 +164,7 @@ public abstract class Car extends MovableObject implements ISteerable{
         //Only change direction if not in oil slick
         if (!isOilSlick)
         {
-            this.heading = this.steerDir;
+            this.heading = MovableObject.fixHeading(this.heading + (this.steerDir / 10));
         }
     }
     
@@ -248,7 +248,7 @@ public abstract class Car extends MovableObject implements ISteerable{
     public void setSteerDir(int newSteerDir){
         
         int effectiveDir = MovableObject.fixDirection(newSteerDir);
-        
+        this.body.setDir(effectiveDir);
         this.steerDir = effectiveDir;
     }
     

@@ -33,6 +33,10 @@ public class CarBody implements ITransformable, IDrawable{
         rear = new CarAxle();
         rear.translate(15, 0);       
     }
+    
+	public void setDir(int dir) {
+		front.setDir(dir);
+	}
 
     @Override
     public void translate(int x, int y) {

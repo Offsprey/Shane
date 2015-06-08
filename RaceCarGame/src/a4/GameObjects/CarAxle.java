@@ -39,6 +39,10 @@ public class CarAxle implements ITransformable, IDrawable{
         rr = new Point(2, 15);
         rl = new Point(-2, 15);
     }
+	public void setDir(int dir) {
+		right.setDir(dir);
+		left.setDir(dir);
+	}
 
     @Override
     public void translate(int x, int y) {

@@ -91,17 +91,17 @@ public final class GameWorld implements IObservable, IGameWorld{
         gObjects.add(makePylon(4));
         gObjects.add(makePylon(5));
         
-       NonPlayerCar nPC = makeNPCar();
-        nPC.setStrategy(new WinStrategy(nPC,getPylon(2)));
-        gObjects.add(nPC);
-        
-        nPC = makeNPCar();
-        nPC.setStrategy(new KillStrategy(nPC,nCar));
-        gObjects.add(nPC);
-        
-        nPC = makeNPCar();        
-        nPC.setStrategy(new KillStrategy(nPC,nCar));
-        gObjects.add(nPC);
+//        NonPlayerCar nPC = makeNPCar();
+//        nPC.setStrategy(new WinStrategy(nPC,getPylon(2)));
+//        gObjects.add(nPC);
+//        
+//        nPC = makeNPCar();
+//        nPC.setStrategy(new KillStrategy(nPC,nCar));
+//        gObjects.add(nPC);
+//        
+//        nPC = makeNPCar();        
+//        nPC.setStrategy(new KillStrategy(nPC,nCar));
+//        gObjects.add(nPC);
         
         gObjects.add(makeFuel());
         
@@ -332,7 +332,7 @@ public final class GameWorld implements IObservable, IGameWorld{
     {
         Car car = getPlayerCar();
         if (car != null)
-            car.adjustSteerDir(-5);
+            car.adjustSteerDir(5);
     }
     
     @Override
@@ -340,7 +340,7 @@ public final class GameWorld implements IObservable, IGameWorld{
     {
         Car car = getPlayerCar();
         if (car != null)
-            car.adjustSteerDir(5);
+            car.adjustSteerDir(-5);
     }
     
     @Override

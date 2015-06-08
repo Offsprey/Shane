@@ -43,6 +43,7 @@ public class PlayerCar extends Car{
         g2d.drawLine(rl.x, rl.y, rr.x, rr.y);
         g2d.drawLine(rr.x, rr.y, fr.x, fr.y);
         
+        
         body.draw(g, selected); 
         
         g2d.setTransform(theTransform);
